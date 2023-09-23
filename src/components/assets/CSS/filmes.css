@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    background-color: #0F0F0F;
+    position: fixed;
+}
+
+.navbar-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    gap: 8px;
+}
+
+.navbar-link{
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.navbar-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    gap: 6px;
+}
+
+.navbar-items img{
+    border-radius: 100px;
+    width: 80px;
+    height: 80px;
+}
+
+.navbar-items p{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.iconNoti{
+    width: 30px;
+    height: 30px;
+    color: #fff;
+}
+
+.nav-links li{
+    list-style: none;
+    position: relative;
+}
+
+.nav-links li a {
+    display: flex;
+    text-align: start;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: color 0.3s ease, color 0.6s ease;
+}
+
+.nav-links li a:hover{
+    color: red;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::after,
+.nav-links li p.active::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: white;
+    display: block;
+    margin: auto;
+    transition: width 0.4s, left 0.4s ease;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.nav-links li a:hover::after {
+    width: 30%;
+    left: 0;
+}
+
+.Btn-1{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    padding: 5px;
+}
+  
+.bar1 {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: red;
+    margin: 5px 0;
+}
+
+.bar2{
+    display: block;
+    width: 34px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.bar3{
+    display: block;
+    width: 22px;
+    height: 3px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+.Mobile{
+    display: none;
+}
+
+.ver{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.Destaque{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 200px;
+    color: white;
+}
+
+.Destaque h1{
+    padding: 3%;
+    font-size: 18pt;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    bottom: 0;
+}
+
+.Filmes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    grid-row: auto;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+    background-color: #121212;
+}
+
+.Filme{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 900px;
+    margin: 20px;
+    transition: 0.5s ease-in-out;
+}
+
+.Filme img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.Titulo{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 14pt;
+    margin: 30px 0 30px 0;
+    font-weight: 800;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    color: #CECECE;
+    font-size: 12pt;
+    margin: 10px;
+    font-weight: 600;
+}
+
+.btnVer{
+    background-color: red;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14pt;
+    margin-top: 40px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px;
+}
+
+@media screen and (max-width: 1222px){
+    .navbar-link{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 105px;
+        right: -500px;
+        height: 100vh;
+        width: 300px;
+        background-color: #0F0F0F;
+        transition: 1s ease-in-out;
+        animation: 1s ease-in-out;
+        padding: 0 40px 0 40px;
+    }
+
+    .nav-links{
+        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+    }
+
+    .nav-links li{
+        margin: 30px 0;
+    }
+
+    .Mobile{
+        display: block;
+    }
+
+    .Btn-1{
+        cursor: pointer;
+    }
+
+    .navbar-link.active{
+        right: 0px;
+    }
+
+}

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.aea05df8.css",
+    "main.js": "/static/js/main.5d74d27b.js",
+    "static/media/iconPerfil.png": "/static/media/iconPerfil.768a0a952399224800bf.png",
+    "static/media/FlixFlow.png": "/static/media/FlixFlow.ba5bd07e84e83103d72c.png",
+    "index.html": "/index.html",
+    "main.aea05df8.css.map": "/static/css/main.aea05df8.css.map",
+    "main.5d74d27b.js.map": "/static/js/main.5d74d27b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aea05df8.css",
+    "static/js/main.5d74d27b.js"
+  ]
+}
