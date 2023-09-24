@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function Header(){
@@ -36,12 +35,9 @@ function Header(){
         <>
             <header className="Header">
                 <form onSubmit={handleSearch} className="Pesquisar">
-                    <div className="IconePesquisa">
-                        <BsSearch/>
-                    </div>
                     <input type="text" name="search" id="search" placeholder="Pesquisar..." className="InputPes" value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
                     <input type="submit" value="Pesquisar" className="BtnPes"/>
-                    {showResults && <button onClick={handleClear} className="BtnLimpar">Limpar</button>}
+                    {showResults && <button onClick={handleClear} className="BtnLimpar">X</button>}
                 </form>
             </header>
             {showResults && (
