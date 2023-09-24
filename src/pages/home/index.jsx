@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/layouts/Navbar";
 import Header from "../../components/layouts/Header";
+import Footer from "../../components/layouts/Footer";
 
 function Home() {
     const imagePath = "https://image.tmdb.org/t/p/w500";
@@ -45,6 +46,7 @@ function Home() {
                     );
                 })}
             </div>
+            <Footer/>
         </>
     );
 }

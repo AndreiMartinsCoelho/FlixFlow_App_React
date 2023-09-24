@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import Navbar from "../../components/layouts/Navbar";
 import Header from "../../components/layouts/Header";
+import Footer from "../../components/layouts/Footer";
 
 const Movie = () => {
   const { id } = useParams();
@@ -51,6 +52,7 @@ const Movie = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

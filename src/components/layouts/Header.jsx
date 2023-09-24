@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../assets/CSS/filmes.css";
 import { Link } from "react-router-dom";
 
 function Header() {
