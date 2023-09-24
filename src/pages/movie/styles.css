@@ -1,40 +1,97 @@
-.container {
-  text-align: center;
+.Filmes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+  background-color: #121212;
 }
 
-.link_button {
-  margin-top: 5px;
-  padding: 0.7rem 3rem;
-  border: none;
-  border-radius: 15px;
-  color: #212121;
-  background-color: #ffffff;
-  font-weight: 1000;
-  font-size: 12 px;
-  cursor: pointer;
-  transition: all 250ms;
-}
-.link_button:hover{
-  transform: scale(1.1);
+.Destaque2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 28pt;
+  font-weight: 800;
+  padding-top: 26vh;
+  color: white;
 }
 
-.img_movie {
-  width: 20%;
-  margin: 0 40%;
+.Filme2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  grid-column: auto;
+  margin: 5%;
+  border-radius: 20px;
+  background-color: #0F0F0F;
 }
 
-.movie-desc {
-  text-align: justify;
+.Filme2 img {
+  width: 30%;
+  margin: 5%;
+  border-radius: 20px;
 }
-.descricao {
+
+.info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 0 30%;
+  width: 100%;
+  padding: 10px;
+  height: 40%;
+  color: #CECECE;
+  font-weight: 600;
 }
-.descricao h4 {
-  font-size: 24px;
+
+.T{
+  display: flex;
+  width: 100%;
+  height: 40%;
+  color: white;
+  font-weight: 600;
+  font-size: 28pt;
+  margin-top: 10px;
 }
-.descricao p {
-  text-indent: 30px;
+
+.D{
+  display: flex;
+  width: 100%;
+  height: 40%;
+  color: #CECECE;
+  font-weight: 600;
+  font-size: 18pt;
+  margin-top: 10px;
+}
+
+.link_button{
+  display: flex;
+  width: 350px;
+  height: 40%;
+  color: white;
+  font-weight: 600;
+  font-size: 18pt;
+  margin-top: 10px;
+  border: 2px solid white;
+  text-decoration: none;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1222px){
+  .Filme2{
+    width: 90%;
+    flex-direction: column;
+  }
+  .Filme2 img{
+    width: 90%;
+    height: 100%;
+  }
 }
