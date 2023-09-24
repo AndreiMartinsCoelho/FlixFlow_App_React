@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    transition: 0.5 ease-in-out;
 }
 
 .ResultadoFilmes{
@@ -14,8 +15,9 @@
     flex-direction: row;
     grid-row: auto;
     flex-wrap: wrap;
-    padding-top: 24vh;
+    padding-top: 26vh;
     background-color: #121212;
+    transition: 0.5 ease-in-out;
 }
 
 .ResultadoH1{
@@ -25,46 +27,51 @@
     width: 100%;
     height: 50px;
     color: white;
-    font-size: 18pt;
+    font-size: 13pt;
     margin: 30px 0 30px 0;
     font-weight: 800;
+    transition: 0.5 ease-in-out;
 }
 
 .BtnLimpar{
     background-color: red;
-    height: 50px;
-    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 10pt;
+    font-size: 12pt;
     font-weight: 600;
     cursor: pointer;
     padding: 15px;
+    transition: 0.5 ease-in-out;
 }
 
 .navbar{
     width: 100%;
-    height: 16vh;
+    height: 14vh;
     display: flex;
     align-items: center;
     justify-content:space-evenly;
     background-color: #0F0F0F;
     position: fixed;
     z-index: 3;
+    transition: 0.5 ease-in-out;
 }
 
 .Header{
     width: 100%;
-    height: 8vh;
+    height: 6vh;
     display: flex;
     align-items: center;
     justify-content:space-evenly;
     background-color: #0F0F0F;
-    top: 16vh;
+    top: 14vh;
     position: fixed;
     z-index: 2;
+    transition: 0.5 ease-in-out;
 }
 
 .Pesquisar{
@@ -74,16 +81,17 @@
     width: 100%;
     background-color: #0F0F0F;
     position: fixed;
+    transition: 0.5 ease-in-out;
 }
 
 .InputPes{
-    width: 50%;
-    height: 50px;
-    border-radius: 10px;
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
     border: none;
     outline: none;
-    padding: 10px;
-    font-size: 14pt;
+    padding: 12px;
+    font-size: 12pt;
     font-weight: 600;
     background-color: #131313;
     color: #857D7D;
@@ -92,8 +100,9 @@
 
 .InputPes::placeholder{
     color: #857D7D;
-    font-size: 14pt;
+    font-size: 12pt;
     font-weight: 600;
+    transition: 0.5 ease-in-out;
 }
 
 .InputPes:focus{
@@ -102,16 +111,18 @@
 }
 
 .BtnPes{
-    border-radius: 10px;
+    border-radius: 5px;
     border: solid 2px #857D7D;
     outline-color: white;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
-    font-size: 14pt;
+    height: 40px;
+    font-size: 12pt;
     font-weight: 600;
     background-color: #131313;
     color: #857D7D;
     cursor: pointer;
+    transition: 0.5 ease-in-out;
 }
 
 .BtnPes:hover{
@@ -124,8 +135,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 14rem;
-    gap: 8px;
+    width: 6.5rem;
 }
 
 .navbar-link{
@@ -138,32 +148,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .navbar-items{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15rem;
+    width: 12rem;
     gap: 6px;
 }
 
 .navbar-items img{
     border-radius: 100px;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 
 .navbar-items p{
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 700;
 }
 
 .iconNoti{
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     color: #fff;
 }
 
@@ -177,7 +187,7 @@
     text-align: start;
     color: #fff;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 0.9rem;
     font-weight: 700;
     transition: color 0.3s ease, color 0.6s ease;
 }
@@ -191,7 +201,7 @@
 .nav-links li p.active::after {
     content: '';
     width: 0%;
-    height: 2px;
+    height: 1px;
     background: white;
     display: block;
     margin: auto;
@@ -260,7 +270,7 @@
 
 .Destaque h1{
     padding: 3%;
-    font-size: 18pt;
+    font-size: 12pt;
     font-weight: 800;
     text-align: center;
     text-transform: uppercase;
@@ -274,19 +284,18 @@
     flex-direction: row;
     grid-row: auto;
     flex-wrap: wrap;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     background-color: #121212;
 }
 
 .Filme{
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 400px;
-    height: 900px;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
+    width: 300px;
+    height: 600px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
     background-color: #0F0F0F;
     transition: 0.5s ease-in-out;
 }
@@ -294,45 +303,38 @@
 .Filme img{
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .Titulo{
     display: flex;
     width: 100%;
-    height: 50px;
     color: white;
-    font-size: 14pt;
-    margin: 30px 0 30px 0;
+    font-size: 10pt;
+    margin-top: 10px;
     font-weight: 800;
 }
 
 .info{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: 50px;
     color: #CECECE;
-    font-size: 12pt;
-    margin: 10px;
+    font-size: 8pt;
     font-weight: 600;
 }
 
 .btnVer{
     background-color: red;
     width: 100%;
-    height: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
-    align-items: center;
     justify-content: center;
     color: white;
-    font-size: 14pt;
-    margin-top: 40px;
+    font-size: 8pt;
     font-weight: 600;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
 }
 
 footer{
@@ -350,7 +352,7 @@ footer{
 .footer-p1{
     width: 100%;
     background-color: red;
-    padding: 40px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -361,7 +363,7 @@ footer{
 }
 
 .footer-p1 h1{
-    font-size: 18pt;
+    font-size: 12pt;
     font-weight: 600;
     color: white;
 }
@@ -373,13 +375,13 @@ footer{
     flex-direction: row;
     grid-row: auto;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
 }
 
 .redes svg {
     position: relative;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     color: white;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -404,20 +406,17 @@ footer{
 
 .redes svg:active {
     color: black;
-    width: 45px;
-    height: 45px;
-    margin: -20px;
     animation: pulse 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
 }
 
 .footer-p2{
     background-color: #131313;
-    padding: 40px;
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 30px;
     flex-direction: row;
     grid-row: auto;
     flex-wrap: wrap;
@@ -428,17 +427,17 @@ footer{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .footer-info h1{
-    font-size: 18pt;
+    font-size: 14pt;
     font-weight: 600;
     color: white;
 }
 
 .footer-info p{
-    font-size: 12pt;
+    font-size: 9pt;
     font-weight: 600;
     color: #CECECE;
 }
@@ -456,7 +455,7 @@ footer{
 
 .footer-p3{
     background-color: #0F0F0F;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -467,20 +466,20 @@ footer{
 }
 
 .footer-p3 h1{
-    font-size: 18pt;
-    font-weight: 600;
+    font-size: 13pt;
+    font-weight: 700;
     color: #CECECE;
 }
 
 @media screen and (max-width: 1222px){
 
     .navbar-logo img{
-        width: 120px;
-        height: 120px;
+        width: 96px;
+        height: 96px;
     }
 
     .redes{
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .navbar-link{
@@ -489,8 +488,8 @@ footer{
         align-items: flex-start;
         justify-content: flex-start;
         position: fixed;
-        top: 105px;
-        right: -500px;
+        top: 90px;
+        right: -400px;
         height: 100vh;
         width: 300px;
         background-color: #0F0F0F;
