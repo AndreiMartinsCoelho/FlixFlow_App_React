@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/layouts/Navbar";
+import Header from "../../components/layouts/Header";
 
 function Home() {
     const imagePath = "https://image.tmdb.org/t/p/w500";
@@ -18,7 +19,7 @@ function Home() {
     return (
         <>
             <Navbar/>
-
+            <Header/>
             <div className="Filmes">
                 <div className="Destaque">
                     <h1>Filmes e séries Populares da plataforma:</h1>
