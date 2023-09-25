@@ -416,8 +416,7 @@ footer{
     background-color: #131313;
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 30px;
     flex-direction: row;
     grid-row: auto;
@@ -427,7 +426,6 @@ footer{
 
 .footer-info{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: 5px;
 }
@@ -496,21 +494,10 @@ footer{
     transition: 0.3s ease-in-out;
 }
 
-.generos ul{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    grid-row: auto;
-    flex-wrap: wrap;
-    gap: 10px; 
-    transition: 0.3s ease-in-out;
-}
-
-.generos li{
+.generos select {
     color: white;
     font-size: 10pt;
-    font-weight: 800;
+    font-weight: 600;
     cursor: pointer;
     list-style: none;
     display: flex;
@@ -519,19 +506,21 @@ footer{
     flex-direction: row;
     grid-row: auto;
     flex-wrap: wrap;
-    background-color: #121212;
+    border: 2px solid white;
+    background-color: #0F0F0F;
     width: 140px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 6px;
+    border: none;
+    padding: 0 10px;
     transition: 0.3s ease-in-out;
-}
-
-.selected {
-    background-color: red!important;
-    color: white!important;
+    margin: 10px;
+  }
+  
+  .generos select:focus {
+    outline: none;
     border: 2px solid white;
-    transition: 0.3s ease-in-out;
-}
+  }
 
 .ResultadoFilmes2 h1{
     font-size: 12pt;
@@ -544,17 +533,21 @@ footer{
 }
 
 .BtnLi{
+    display: flex;
+    align-items: center;
     background-color: #131313;
     border: 2px solid white;
-    width: 150px;
-    border-radius: 5px;
+    width: 140px;
+    height: 40px;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     color: white;
     font-size: 10pt;
     font-weight: 600;
     cursor: pointer;
-    padding: 6px;
+    padding: 0 10px;
+    transition: 0.3s ease-in-out;
     margin: 10px;
 }
 

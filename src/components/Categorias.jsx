@@ -58,19 +58,21 @@ function Categorias() {
             Limpar categoria
           </button>
         )}
-        <ul>
+        <select
+          value={selectedGenre ? selectedGenre.id : ""}
+          onChange={(event) =>
+            setSelectedGenre(
+              genres.find((genre) => genre.id === parseInt(event.target.value))
+            )
+          }
+        >
+          <option value="">Categorias</option>
           {genres.map((genre) => (
-            <li
-              key={genre.id}
-              onClick={() => setSelectedGenre(genre)}
-              className={
-                selectedGenre && selectedGenre.id === genre.id ? "selected" : ""
-              }
-            >
+            <option key={genre.id} value={genre.id}>
               {genre.name}
-            </li>
+            </option>
           ))}
-        </ul>
+        </select>
       </div>
       {selectedGenre && (
         <div className="ResultadoFilmes2">
