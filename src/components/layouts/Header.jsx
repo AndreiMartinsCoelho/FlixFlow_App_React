@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "../assets/CSS/filmes.css";
 import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 function Header() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [showResults, setShowResults] = useState(false);
+  const [musicUrl, setMusicUrl] = useState("");
   const KEY = process.env.REACT_APP_KEY;
 
   useEffect(() => {
@@ -23,6 +25,14 @@ function Header() {
     }
   }, [searchTerm, KEY]);
 
+  useEffect(() => {
+    if (searchTerm.toLowerCase() === "mortal kombat") {
+      setMusicUrl("https://www.youtube.com/watch?v=Sr1bLLvsbh0&ab_channel=AustinJons%26theImmortals-Topic");
+    } else {
+      setMusicUrl("");
+    }
+  }, [searchTerm]);
+
   const handleSearch = (event) => {
     event.preventDefault();
   };
@@ -32,31 +42,6 @@ function Header() {
     setMovies([]);
     setShowResults(false); // hide the search results
   };
-
-  useEffect(() => {
-    const handleEasterEgg = (event) => {
-      console.log(event.code);
-      const sequence = ["KeyO", "KeyX", "KeyO", "KeyO"];
-      let index = 0;
-
-      if (event.code === sequence[index]) {
-        index++;
-
-        if (index === sequence.length) {
-          setSearchTerm("460465");
-          setShowResults(true);
-        }
-      } else {
-        index = 0;
-      }
-    };
-
-    document.addEventListener("keydown", handleEasterEgg);
-
-    return () => {
-      document.removeEventListener("keydown", handleEasterEgg);
-    };
-  }, []);
 
   return (
     <>
@@ -82,6 +67,9 @@ function Header() {
       {showResults && (
         <div className="ResultadoFilmes">
           <h2 className="ResultadoH1">Resultados da sua Pesquisa:</h2>
+          {musicUrl && (
+            <ReactPlayer url={musicUrl} playing loop />
+          )}
           {movies.map((movie) => (
             <div key={movie.id} className="Filme">
               <img
