@@ -8,6 +8,8 @@ function Header() {
   const [searchTerm, setSearchTerm] = useState("");
   const [showResults, setShowResults] = useState(false);
   const [musicUrl, setMusicUrl] = useState("");
+  const [music2Url, setMusic2Url] = useState("");
+  const [music3Url, setMusic3Url] = useState("");
   const KEY = process.env.REACT_APP_KEY;
 
   useEffect(() => {
@@ -27,11 +29,27 @@ function Header() {
 
   useEffect(() => {
     if (searchTerm.toLowerCase() === "mortal kombat") {
-      setMusicUrl("https://www.youtube.com/watch?v=Sr1bLLvsbh0&ab_channel=AustinJons%26theImmortals-Topic");
+      setMusicUrl("https://www.youtube.com/watch?v=YBBbjKVbeIw&ab_channel=MrAndersonZG");
     } else {
       setMusicUrl("");
     }
   }, [searchTerm]);
+
+  useEffect(()=>{
+    if (searchTerm.toLowerCase() === "imortal tricolor") {
+      setMusic2Url("https://www.youtube.com/watch?v=63alIv2II1M&ab_channel=golaudio");
+    } else {
+      setMusic2Url("");
+    }
+  },[searchTerm]);
+
+  useEffect(()=>{
+    if (searchTerm.toLowerCase() === "jacare") {
+      setMusic3Url("https://youtu.be/XwfW8ZHLzGM?si=BMMdU6NY3aCb1ISI");
+    } else {
+      setMusic3Url("");
+    }
+  },[searchTerm]);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -65,36 +83,46 @@ function Header() {
         </form>
       </header>
       {showResults && (
-        <div className="ResultadoFilmes">
-          <h2 className="ResultadoH1">Resultados da sua Pesquisa:</h2>
-          {musicUrl && (
-            <ReactPlayer url={musicUrl} playing loop />
-          )}
-          {movies.map((movie) => (
-            <div key={movie.id} className="Filme">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-              />
-              <span className="Titulo">{movie.title}</span>
-              <div className="info">
-                <span className="Data">
-                  Data de lançamento: {movie.release_date}
-                </span>
-                <span className="Nota">Nota: {movie.vote_average}</span>
-                <span className="Idioma">
-                  Idioma: {movie.original_language}
-                </span>
-                <span className="Popularidade">
-                  Popularidade: {movie.popularity}
-                </span>
+        <React.Fragment>
+          <div className="ResultadoFilmes">
+            <h2 className="ResultadoH1">Resultados da sua Pesquisa:</h2>
+            {musicUrl && (
+              <div>
+                <ReactPlayer url={musicUrl} playing loop />
               </div>
-              <Link to={`/${movie.id}`} className="">
-                <button className="btnVer">Saiba mais...</button>
-              </Link>
-            </div>
-          ))}
-        </div>
+            )}
+            {music2Url && (
+              <ReactPlayer url={music2Url} playing loop />
+            )}
+            {music3Url && (
+              <ReactPlayer url={music3Url} playing loop />
+            )}
+            {movies.map((movie) => (
+              <div key={movie.id} className="Filme">
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                  alt={movie.title}
+                />
+                <span className="Titulo">{movie.title}</span>
+                <div className="info">
+                  <span className="Data">
+                    Data de lançamento: {movie.release_date}
+                  </span>
+                  <span className="Nota">Nota: {movie.vote_average}</span>
+                  <span className="Idioma">
+                    Idioma: {movie.original_language}
+                  </span>
+                  <span className="Popularidade">
+                    Popularidade: {movie.popularity}
+                  </span>
+                </div>
+                <Link to={`/${movie.id}`} className="">
+                  <button className="btnVer">Saiba mais...</button>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </React.Fragment>
       )}
     </>
   );
