@@ -61,11 +61,8 @@
 .D{
   display: flex;
   width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  grid-column: auto;
-  width: 100%;
-  height: 100%;
+  flex-direction:row;
+  grid-row: auto;
   color: #CECECE;
   font-weight: 600;
   font-size: 12pt;
@@ -91,15 +88,17 @@
 
 .genNome{
   display: flex;
-  width: 300px;
-  height: 100%;
+  width: 110px;
+  height: 40px;
   background-color: red;
   border-radius: 7px;
   padding: 10px;
-  color: #CECECE;
+  color: white;
   font-weight: 800;
-  font-size: 12pt;
-  margin-top: 2%;
+  font-size: 8pt;
+  margin: 1%;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1113px){

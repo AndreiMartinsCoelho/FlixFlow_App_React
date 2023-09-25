@@ -52,6 +52,11 @@ const Movie = () => {
           />
           <div className="info">
             <span className="T">{movie.title}</span>
+            <span className="D">
+              {genres.map((genre) => (
+                <span key={genre.id} className="genNome">{genre.name} </span>
+              ))}
+            </span>
             <span className="D">Data de lançamento: {movie.release_date}</span>
             <span className="D">Nota: {movie.vote_average}</span>
             <span className="D">Idioma: {movie.original_language}</span>
@@ -61,12 +66,6 @@ const Movie = () => {
             </span>
             <span className="D">Popularidade: {movie.popularity}</span>
             <span className="D">Descrição: {movie.overview}</span>
-            <span className="D">
-              <h1>Gêneros: </h1>{" "}
-              {genres.map((genre) => (
-                <span key={genre.id} className="genNome">{genre.name} </span>
-              ))}
-            </span>
             <Link to="/">
               <button className="link_button">Voltar</button>
             </Link>
