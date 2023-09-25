@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/layouts/Navbar";
 import Header from "../../components/layouts/Header";
 import Footer from "../../components/layouts/Footer";
+import Carousel from "../../components/Carousel";
+import Categorias from "../../components/Categorias";
 
 function Home() {
     const imagePath = "https://image.tmdb.org/t/p/w500";
@@ -21,6 +23,8 @@ function Home() {
         <>
             <Navbar/>
             <Header/>
+            <Carousel/>
+            <Categorias/>
             <div className="Filmes">
                 <div className="Destaque">
                     <h1>Filmes e séries Populares da plataforma:</h1>
