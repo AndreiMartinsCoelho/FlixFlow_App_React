@@ -63,7 +63,7 @@ function Header() {
   };
 
   const handleVoiceSearch = () => {
-    const recognition = new window.SpeechRecognition();
+    const recognition = new window.webkitSpeechRecognition();
     recognition.lang = "pt-BR";
     recognition.onresult = (event) => {
       const result = event.results[0][0].transcript;
