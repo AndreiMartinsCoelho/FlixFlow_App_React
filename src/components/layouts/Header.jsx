@@ -45,7 +45,7 @@ function Header() {
   },[searchTerm]);
 
   useEffect(()=>{
-    if (searchTerm.toLowerCase() === "jacare") {
+    if (searchTerm.toLowerCase() === "jacaré") {
       setMusic3Url("https://youtu.be/XwfW8ZHLzGM?si=BMMdU6NY3aCb1ISI");
     } else {
       setMusic3Url("");
