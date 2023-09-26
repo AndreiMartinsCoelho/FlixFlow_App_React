@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../assets/CSS/filmes.css";
 import { Link } from "react-router-dom";
+import {BsMic} from "react-icons/bs";
 import ReactPlayer from "react-player";
 
 function Header() {
@@ -61,6 +62,19 @@ function Header() {
     setShowResults(false); // hide the search results
   };
 
+  const handleVoiceSearch = () => {
+    const recognition = new window.webkitSpeechRecognition();
+    recognition.lang = "pt-BR";
+    recognition.onresult = (event) => {
+      const result = event.results[0][0].transcript;
+      setSearchTerm(result);
+    };
+    recognition.onerror = (event) => {
+      console.error(event.error);
+    };
+    recognition.start();
+  };
+
   return (
     <>
       <header className="Header">
@@ -75,16 +89,21 @@ function Header() {
             onChange={(event) => setSearchTerm(event.target.value)}
           />
           <input type="submit" value="Pesquisar" className="BtnPes" />
-          {showResults && (
-            <button onClick={handleClear} className="BtnLimpar">
-              X
-            </button>
-          )}
+          <button onClick={handleVoiceSearch} className="BtnMic">
+            <span className="fa fa-microphone">
+              <BsMic/>
+            </span>
+          </button>
         </form>
       </header>
       {showResults && (
-        <React.Fragment>
+        <>
           <div className="ResultadoFilmes">
+          {showResults && (
+            <button onClick={handleClear} className="BtnLimpar">
+              Limpar pesquisa
+            </button>
+            )}
             <h2 className="ResultadoH1">Resultados da sua Pesquisa:</h2>
             {musicUrl && (
               <div>
@@ -122,7 +141,7 @@ function Header() {
               </div>
             ))}
           </div>
-        </React.Fragment>
+        </>
       )}
     </>
   );

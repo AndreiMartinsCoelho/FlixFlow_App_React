@@ -70,6 +70,9 @@ const Movie = () => {
       <div className="Filmes">
         <div className="Destaque2">
           <h1>Sobre o Filme:</h1>
+          <Link to="/">
+              <button className="link_button">Voltar</button>
+          </Link>
         </div>
         <div className="Filme2">
           <img
@@ -110,9 +113,6 @@ const Movie = () => {
                 ></iframe>
               </div>
             )}
-            <Link to="/">
-              <button className="link_button">Voltar</button>
-            </Link>
           </div>
         </div>
         <div className="related-movies">
