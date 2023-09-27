@@ -11,6 +11,7 @@ function Header() {
   const [musicUrl, setMusicUrl] = useState("");
   const [music2Url, setMusic2Url] = useState("");
   const [music3Url, setMusic3Url] = useState("");
+  const [music4Url, setMusic4Url] = useState("");
   const KEY = process.env.REACT_APP_KEY;
 
   useEffect(() => {
@@ -49,6 +50,14 @@ function Header() {
       setMusic3Url("https://youtu.be/XwfW8ZHLzGM?si=BMMdU6NY3aCb1ISI");
     } else {
       setMusic3Url("");
+    }
+  },[searchTerm]);
+
+  useEffect(()=>{
+    if (searchTerm.toLowerCase() === "homem") {
+      setMusic4Url("https://youtu.be/Bn_JFlWi_LI?si=6JivlB6sI7_tjXNx");
+    }else{
+      setMusic4Url("");
     }
   },[searchTerm]);
 
@@ -107,14 +116,17 @@ function Header() {
             <h2 className="ResultadoH1">Resultados da sua Pesquisa:</h2>
             {musicUrl && (
               <div>
-                <ReactPlayer url={musicUrl} playing loop />
+                <ReactPlayer url={musicUrl} playing loop className="memes"/>
               </div>
             )}
             {music2Url && (
-              <ReactPlayer url={music2Url} playing loop />
+              <ReactPlayer url={music2Url} playing loop className="memes"/>
             )}
             {music3Url && (
-              <ReactPlayer url={music3Url} playing loop />
+              <ReactPlayer url={music3Url} playing loop className="memes"/>
+            )}
+            {music4Url && (
+              <ReactPlayer url={music4Url} playing loop className="memes"/>
             )}
             {movies.map((movie) => (
               <div key={movie.id} className="Filme">

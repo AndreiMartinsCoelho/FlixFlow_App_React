@@ -8,6 +8,10 @@
     transition: 0.5 ease-in-out;
 }
 
+body{
+    background-color: #121212;
+}
+
 .ResultadoFilmes{
     display: flex;
     align-items: center;
@@ -272,9 +276,9 @@
 }
 
 .Destaque h1{
-    padding: 3%;
     font-size: 12pt;
     font-weight: 800;
+    padding-left: 3%;
     text-align: center;
     text-transform: uppercase;
 }
@@ -574,6 +578,108 @@ footer{
     padding: 0 10px;
     transition: 0.3s ease-in-out;
     margin: 10px;
+}
+
+.memes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    grid-row: auto;
+    padding: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.Filmes2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    grid-row: auto;
+    padding: 3%;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    background-color: #121212;
+}
+
+.Filmes2 h1{
+    font-size: 12pt;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.FilmesContainer{
+    display: flex;
+    background-color: #121212;
+}
+
+.Film3{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 400px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #0F0F0F;
+    transition: 0.5s ease-in-out;
+}
+
+.Filmes2::-webkit-scrollbar {
+    width: 0;
+}
+  
+
+.Film3 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.Titulo3{
+    display: flex;
+    width: 100%;
+    color: white;
+    font-size: 7pt;
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+.info3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #CECECE;
+    font-size: 7pt;
+    font-weight: 600;
+}
+
+.btnVer3{
+    background-color: red;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 8pt;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.Film3 {
+    animation: slide 50s linear infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1600%);
+    }
 }
 
 @media screen and (max-width: 1222px){
