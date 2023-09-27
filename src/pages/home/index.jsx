@@ -10,6 +10,7 @@ function Home() {
   const imagePath = "https://image.tmdb.org/t/p/w500";
   const [movies, setMovies] = useState([]);
   const [moviesMelhoresNotas, setMoviesMelhoresNotas] = useState([]);
+  const [moviesProxlan, setMoviesProxlan] = useState([]);
   const KEY = process.env.REACT_APP_KEY;
   useEffect(() => {
     fetch(
@@ -28,6 +29,16 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
         setMoviesMelhoresNotas(data.results);
+      });
+  }, [KEY]);
+
+  useEffect(() => {
+    fetch(
+        `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&language=pt-BR&page=8`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setMoviesProxlan(data.results);
       });
   }, [KEY]);
 
@@ -55,6 +66,38 @@ function Home() {
                     Data de lançamento: {movie.release_date}
                   </span>
                   <span className="Nota">Nota: {movie.vote_average}</span>
+                  <span className="Idioma">
+                    Idioma: {movie.original_language}
+                  </span>
+                  <span className="Popularidade">
+                    Popularidade: {movie.popularity}
+                  </span>
+                </div>
+                <Link to={`/${movie.id}`} className="">
+                  <button className="btnVer3">Saiba mais...</button>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="Filmes2" style={{ overflowX: "scroll" }}>
+        <div>
+          <h1>Filmes que serão lançados em breve:</h1>
+        </div>
+        <div className="FilmesContainer">
+          {moviesProxlan.map((movie) => {
+            return (
+              <div className="Film3" key={movie.id}>
+                <img
+                  src={`${imagePath}${movie.poster_path}`}
+                  alt="{movie.title}"
+                />
+                <span className="Titulo3">{movie.title}</span>
+                <div className="info3">
+                  <span className="Data">
+                    Data de lançamento: {movie.release_date}
+                  </span>
                   <span className="Idioma">
                     Idioma: {movie.original_language}
                   </span>

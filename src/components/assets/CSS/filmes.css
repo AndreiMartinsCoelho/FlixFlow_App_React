@@ -670,7 +670,7 @@ footer{
 }
 
 .Film3 {
-    animation: slide 50s linear infinite;
+    animation: slide 140s linear infinite;
   }
   
   @keyframes slide {
