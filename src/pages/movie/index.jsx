@@ -82,7 +82,7 @@ const Movie = () => {
           />
           <div className="info">
             {genres.length > 0 && (
-              <span className="D">
+              <span className="D1">
                 {genres.map((genre) => (
                   <span key={genre.id} className="genNome">
                     {genre.name}{" "}

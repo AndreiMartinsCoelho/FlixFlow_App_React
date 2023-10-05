@@ -74,7 +74,7 @@ function Home() {
                   </span>
                 </div>
                 <Link to={`/${movie.id}`} className="">
-                  <button className="btnVer3">Saiba mais...</button>
+                  <button className="btnVer">Saiba mais...</button>
                 </Link>
               </div>
             );
@@ -106,7 +106,7 @@ function Home() {
                   </span>
                 </div>
                 <Link to={`/${movie.id}`} className="">
-                  <button className="btnVer3">Saiba mais...</button>
+                  <button className="btnVer">Saiba mais...</button>
                 </Link>
               </div>
             );

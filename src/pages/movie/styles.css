@@ -61,7 +61,7 @@
 
 .D{
   display: flex;
-  width: 100%;
+  width: 95%;
   flex-direction:row;
   grid-row: auto;
   color: #CECECE;
@@ -83,13 +83,24 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  transition: 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.trailer{
+.link_button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.link_button:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  background-color: #1f1f1f; /* Altera a cor de fundo ao clicar, se desejar */
+}
+
+.trailer {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
   color: #CECECE;
   font-weight: 600;
   font-size: 12pt;
@@ -97,7 +108,16 @@
   border-radius: 10px;
   margin-top: 1%;
   transition: 0.5s ease-in-out;
+  overflow: hidden;
 }
+
+.trailer iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+
 .genNome{
   display: flex;
   width: 110px;
@@ -111,6 +131,26 @@
   margin: 1%;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.genNome:hover{
+  cursor: pointer;
+  background-color: #CC0000!important;
+  transition: 0.3s ease-in-out;
+  transform: perspective(170px) rotateX(8deg);
+}
+
+.D1{
+  display: flex;
+  width: 95%;
+  flex-direction:row;
+  grid-row: auto;
+  color: #CECECE;
+  font-weight: 600;
+  font-size: 12pt;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .movie-grid{
@@ -155,11 +195,32 @@
 
 @media screen and (max-width: 1113px){
   .Filme2{
-    width: 100%;
+    width: 95%!important;
     flex-direction: column;
+    margin: 2.5%;
   }
+
   .Filme2 img{
     width: 90%;
     height: 100%;
+  }
+  
+  .D1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 40%;
+    grid-row: auto;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
   }
 }

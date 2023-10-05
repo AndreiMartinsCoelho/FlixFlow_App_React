@@ -115,18 +115,24 @@ function Header() {
             )}
             <h2 className="ResultadoH1">Resultados da sua Pesquisa:</h2>
             {musicUrl && (
-              <div>
-                <ReactPlayer url={musicUrl} playing loop className="memes"/>
+              <div className="meme">
+                <ReactPlayer url={musicUrl} playing loop className="memes" />
               </div>
             )}
             {music2Url && (
-              <ReactPlayer url={music2Url} playing loop className="memes"/>
+              <div className="meme">
+                <ReactPlayer url={music2Url} playing loop className="memes" />
+              </div>
             )}
             {music3Url && (
-              <ReactPlayer url={music3Url} playing loop className="memes"/>
+              <div className="meme">
+                <ReactPlayer url={music3Url} playing loop className="memes" />
+              </div>
             )}
             {music4Url && (
-              <ReactPlayer url={music4Url} playing loop className="memes"/>
+              <div className="meme">
+                <ReactPlayer url={music4Url} playing loop className="memes" />
+              </div>
             )}
             {movies.map((movie) => (
               <div key={movie.id} className="Filme">
