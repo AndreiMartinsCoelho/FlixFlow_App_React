@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {BsMic} from "react-icons/bs";
 import ReactPlayer from "react-player";
 
+
 function Header() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -71,19 +72,51 @@ function Header() {
     setShowResults(false); // hide the search results
   };
 
+  //Função para pesquisar por voz
   const handleVoiceSearch = () => {
+    const overlayDiv = document.createElement('div');
+    overlayDiv.classList.add('overlay');
+    document.body.appendChild(overlayDiv);
+
+    const message = document.createElement('p');
+    message.classList.add('message');
+    message.innerText = 'Por favor! Fale algo para pesquisar...';
+    overlayDiv.appendChild(message);
+
+    const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.innerText = 'Fechar';
+    closeButton.addEventListener('click', () => {
+        overlayDiv.classList.remove('active'); // Remove a classe 'active'
+    });
+
+    overlayDiv.appendChild(closeButton);
+    setTimeout(() => {
+        overlayDiv.classList.add('active');
+    }, 50);
+
     const recognition = new window.webkitSpeechRecognition();
     recognition.lang = "pt-BR";
     recognition.onresult = (event) => {
-      const result = event.results[0][0].transcript;
-      setSearchTerm(result);
+        const result = event.results[0][0].transcript;
+        setSearchTerm(result);
+
+        // Remover a div overlay após obter o resultado
+        overlayDiv.classList.remove('active');
+        setTimeout(() => {
+            overlayDiv.remove();
+        }, 300);
     };
     recognition.onerror = (event) => {
-      console.error(event.error);
+        console.error(event.error);
+        overlayDiv.classList.remove('active');
+        setTimeout(() => {
+            overlayDiv.remove();
+        }, 300);
     };
     recognition.start();
-  };
-
+}; 
+  
   return (
     <>
       <header className="Header">
