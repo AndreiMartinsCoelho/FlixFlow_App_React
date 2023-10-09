@@ -110,6 +110,7 @@ const Movie = () => {
                   src={`https://www.youtube.com/embed/${trailerKey}`}
                   title="YouTube video player"
                   allow="accelerometer; autoplay; gyroscope; picture-in-picture"
+                  allowFullScreen="true"
                 ></iframe>
               </div>
             )}
